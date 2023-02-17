@@ -1,0 +1,236 @@
+@import './src/plugins/vuetify/preset/styles/mixins';
+
+.login {
+  position: relative;
+  @include flexCenter;
+  padding: 4rem 0;
+  background: linear-gradient(to left, #8db9fc, #2066db);
+
+  @media #{$info-screen-992} {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    max-width: 100rem;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.1) 0 8px 24px,
+      rgba(17, 17, 26, 0.1) 0 16px 56px;
+    background: #fff;
+
+    @media #{$info-screen-992} {
+      width: 40rem;
+    }
+    @media #{$info-screen-500} {
+      width: 100%;
+    }
+  }
+
+  &-image {
+    @media #{$info-screen-992} {
+      display: none;
+    }
+  }
+
+  &-wrapper {
+    flex-shrink: 0;
+    width: 37rem;
+    padding: 4rem 3.5rem;
+    @media #{$info-screen-500} {
+      width: 100%;
+    }
+  }
+
+  &-heading {
+    font-size: 2.6rem;
+    margin-bottom: 0.3rem;
+    color: $hover-color;
+    font-weight: bold;
+    text-align: center;
+    & img {
+      width: 14.4rem;
+      height: auto;
+    }
+  }
+
+  &-description {
+    margin-bottom: 1.5rem;
+    font-family: $font-primary;
+    font-size: 1.3rem;
+    color: #c9c9c9;
+    text-align: center;
+    font-style: italic;
+  }
+
+  &-error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+  
+  &-form {
+    .form-group {
+      position: relative;
+      margin-bottom: 2rem;
+      .password-icon {
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        color: #999;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+
+    .form-label {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 0.2rem;
+      color: $text-light;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px 10px 10px 40px;
+      font-family: $font-primary;
+      color: $text-extra-dark;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #c9c9c9;
+      border-radius: 0;
+      overflow: hidden;
+      background-color: transparent;
+      transition: border-color 0.2s ease-in;
+
+      &:focus {
+        outline: none;
+        background-color: transparent;
+        border-color: $hover-color;
+        color: $text-semi-light;
+        box-shadow: $box-shadow;
+      }
+
+      &:focus + .form-icon {
+        color: $text-semi-light;
+      }
+
+      &.error {
+        outline: none;
+        background-color: transparent !important;
+        border-color: #a94442;
+      }
+
+      &.input-password {
+        padding-right: 3.5rem;
+      }
+    }
+    .form-icon {
+      position: absolute;
+      top: 2.9rem;
+      left: 1rem;
+      color: $text-light;
+      font-size: 1.5rem;
+    }
+    .form-error {
+      display: block;
+      color: $bg-danger;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    .form-forgot {
+      font-size: 1.3rem;
+      margin-top: -1rem;
+      margin-bottom: 2rem;
+      text-align: right;
+      color: darkslategray;
+      font-weight: normal;
+      b {
+        color: $bg-primary;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      a {
+        color: darkslategray;
+      }
+    }
+  }
+
+  .line-text {
+    text-align: center;
+    position: relative;
+    padding-top: 1rem;
+    span {
+      display: inline-block;
+      background-color: white;
+      position: relative;
+      z-index: 2;
+      padding: 1rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      color: #999;
+    }
+    &:before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      top: 60%;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: #999;
+    }
+  }
+  &-social {
+    @include flexCenter;
+    .social-item {
+      cursor: pointer;
+      @include flexCenter;
+      padding: 0.6rem;
+      margin-bottom: 1.2rem;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      font-size: 1.5rem;
+      text-align: center;
+      background-color: #fff;
+      transition: all 0.2s ease-in-out;
+      &:first-of-type {
+        margin-right: 1rem;
+      }
+      &:hover {
+        box-shadow: $box-shadow;
+        border: 1px solid #ede9e9;
+        background-color: #ede9e9;
+      }
+      &:hover svg {
+        transition: transform 0.2s ease-in-out;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &-register {
+    font-size: 1.3rem;
+    text-align: center;
+    color: darkslategray;
+    font-weight: normal;
+    b {
+      color: $bg-primary;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    a {
+      color: darkslategray;
+    }
+  }
+}
